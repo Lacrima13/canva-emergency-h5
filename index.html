@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<title>MOOD SCAPE ∞ EXHIBITION B</title>
+<title>MOOD SCAPE ∞ ULTIMATE</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -10,27 +10,40 @@
 <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+
 </head>
 
 <body>
 
-<canvas id="bg"></canvas>
-<video id="video" autoplay muted playsinline></video>
+<!-- ================= COVER ================= -->
+<div id="cover" class="page active">
+  <h1>MOOD SCAPE ∞</h1>
+  <p>Emotion-driven Interactive Installation</p>
+  <button onclick="startExperience()">ENTER EXPERIENCE</button>
+</div>
 
-<!-- 🎧 音频 -->
-<audio id="calm" loop src="calm.mp3"></audio>
-<audio id="chaos" loop src="chaos.mp3"></audio>
+<!-- ================= INTERACTION ================= -->
+<div id="scene" class="page">
 
-<!-- HUD -->
-<div class="hud">
+  <canvas id="bg"></canvas>
+  <video id="video" autoplay muted playsinline></video>
 
-  <div id="emotion">loading...</div>
-  <div id="direction">direction: neutral</div>
+  <div class="hud">
+    <div id="emotion">loading...</div>
+    <div id="direction">head: neutral</div>
 
-  <button onclick="generateReport()">生成情绪报告</button>
+    <button onclick="generateReport()">GENERATE REPORT</button>
+  </div>
 
-  <div id="report"></div>
+</div>
 
+<!-- ================= REPORT ================= -->
+<div id="report" class="page">
+
+  <h2>EMOTION REPORT</h2>
+  <div id="reportBox"></div>
+
+  <button onclick="backHome()">BACK</button>
 </div>
 
 <script src="script.js"></script>
