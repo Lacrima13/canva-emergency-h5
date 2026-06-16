@@ -1,88 +1,96 @@
 body {
   margin: 0;
   overflow: hidden;
-  font-family: "PingFang SC", "Microsoft YaHei";
-  background: #000;
+  font-family: "PingFang SC";
+  background: radial-gradient(circle at center, #050510, #000);
   color: white;
 }
 
-/* 🌌 背景层 */
+/* 🌌 背景 */
 canvas {
   position: fixed;
   top: 0;
   left: 0;
-  filter: blur(0.3px) contrast(1.2);
+  filter: blur(0.2px) contrast(1.3);
 }
 
-/* 🧠 中央系统 */
+/* 🧠 UI层 */
 .ui {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-/* 🌐 信息卡（核心展板感） */
-.panel {
+/* 🌫️ 玻璃核心卡片 */
+.card {
   width: 380px;
   padding: 26px;
-  border-radius: 18px;
+  border-radius: 20px;
 
   background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(25px);
+  backdrop-filter: blur(30px);
 
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
 
   box-shadow:
-    0 0 80px rgba(0,150,255,0.15),
+    0 0 120px rgba(0,200,255,0.08),
     inset 0 0 30px rgba(255,255,255,0.05);
+
+  animation: float 6s ease-in-out infinite;
 }
 
-/* 🌈 标题系统 */
+/* 🌊 呼吸浮动 */
+@keyframes float {
+  0% { transform: translateY(-6px); }
+  50% { transform: translateY(6px); }
+  100% { transform: translateY(-6px); }
+}
+
+/* ✨ 标题 */
 h1 {
-  text-align: center;
-  font-size: 42px;
-  letter-spacing: 10px;
+  text-align:center;
+  font-size:42px;
+  letter-spacing:8px;
 
   background: linear-gradient(90deg,#00c6ff,#ff00cc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* 🧭 按钮系统 */
+/* 🔘 按钮 */
 button {
-  margin: 6px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  color: white;
+  margin:6px;
+  padding:10px 14px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  color:white;
 
-  background: rgba(120,120,255,0.25);
-  transition: 0.3s;
+  background: rgba(120,120,255,0.2);
+  transition:0.3s;
 }
 
 button:hover {
-  transform: scale(1.08);
-  background: rgba(120,200,255,0.5);
+  transform:scale(1.1);
+  background: rgba(120,200,255,0.4);
 }
 
-/* 🚀 主按钮（生成） */
+/* 🚀 主按钮 */
 .main {
-  width: 100%;
-  margin-top: 12px;
+  width:100%;
   background: linear-gradient(90deg,#00c6ff,#0072ff);
 }
 
-/* 📡 输出区（信息生成感） */
+/* 📡 输出 */
 #output {
-  margin-top: 16px;
-  font-size: 13px;
-  line-height: 1.6;
-  opacity: 0.9;
+  margin-top:15px;
+  font-size:13px;
+  line-height:1.6;
+  opacity:0.9;
 
-  border-left: 2px solid rgba(0,200,255,0.5);
-  padding-left: 10px;
+  border-left:2px solid rgba(0,200,255,0.4);
+  padding-left:10px;
 }
